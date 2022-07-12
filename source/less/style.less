@@ -8,6 +8,7 @@ body {
 .container {
   position: relative;
   height: 100vh;
+  min-height: 550px;
   background-image: url("../img/background/bg-bamboo-mobile@1x.jpg");
   background-size: cover;
   overflow: hidden;
@@ -17,6 +18,7 @@ body {
   }
 
   @media (min-width: 660px) {
+    min-height: 600px;
     padding: 0 30px;
     background-image: url("../img/background/bg-bamboo-tablet@1x.jpg");
 
@@ -28,6 +30,7 @@ body {
   @media (min-width: 1200px) {
     padding: 0;
     width: 1200px;
+    min-height: 800px;
     margin: 0 auto;
     background-image: url("../img/background/bg-bamboo-desktop@1x.jpg");
 
@@ -63,6 +66,7 @@ body {
   position: absolute;
   top: -10px;
   left: 52%;
+  z-index: 2;
   width: 600px;
   height: auto;
   transform: translateX(-50%);
@@ -131,7 +135,10 @@ body {
   bottom: 375px;
   left: 50%;
   width: 22px;
-  transform: translateX(-50%);
+  // transform: translateX(-50%);
+  animation-duration: 1s;
+  animation-name: arrow-resize;
+  animation-iteration-count: infinite;
 
   @media (min-width: 660px) {
     bottom: 339px;
@@ -189,6 +196,14 @@ body {
     right: -32px;
     bottom: -45px;
   }
+
+  &:hover {
+    filter: drop-shadow(0 0 0.75rem #ffffff);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
 }
 
 .link-pictures {
@@ -205,5 +220,101 @@ body {
   @media (min-width: 1200px) {
     left: -50px;
     bottom: -49px;
+  }
+
+  &:hover {
+    filter: drop-shadow(0 0 0.75rem #ffffff);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+@keyframes arrow-resize {
+  from {
+    transform: translateX(-50%) translateY(-5px) scale(0.8);
+  }
+
+  to {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(100%);
+}
+
+// ********************************** gallery.html
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  padding: 20px;
+  // padding-top: 50px;
+
+  @media (min-width: 660px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+.gallery-title {
+  display: block;
+  width: 50%;
+  margin: 20px auto 0;
+  padding: 0;
+  filter: drop-shadow(-1px 1px #230672);
+
+  @media (min-width: 1200px) {
+    width: 400px;
+  }
+}
+
+.link-photo {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  box-shadow: -6px 6px 15px -4px rgba(94, 64, 24, 0.82);
+  border-radius: 5px;
+
+  &--big {
+    grid-column: span 2;
+  }
+}
+
+.photo {
+  display: block;
+  margin: auto;
+  padding: 0;
+  width: 100%;
+
+  &:hover {
+    transition: all 0.2s linear;
+    transform: scale(1.2);
+  }
+
+  &:active {
+    opacity: 0.7;
   }
 }
