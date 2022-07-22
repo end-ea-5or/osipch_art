@@ -40,7 +40,7 @@ body {
   left: 50%;
   padding-bottom: 20px;
   transform: translateX(-50%) translateY(-50%);
-  width: calc(100% - 80px);
+  width: calc(100% - 40px);
   min-width: 240px;
   max-width: 600px;
   background-color: #ffffff;
@@ -106,7 +106,7 @@ body {
 .part {
   display: flex;
   flex-direction: column;
-  margin: 10px 40px 0 40px;
+  margin: 10px 20px 0 20px;
   padding: 10px;
   border-radius: 20px;
   background-image: linear-gradient(45deg, #1da1f2, #0e71c8); // пока что
@@ -115,18 +115,28 @@ body {
   height: 50px;
   transition: all 0.3s ease-in-out;
   color: transparent;
-
-  &__title {
-    margin: 0 auto;
-    padding: 0;
-    font-size: inherit;
-    font-weight: 700;
-    text-align: center;
-    color: #ffffff;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-  }
 }
+
+.part__title {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  font-size: inherit;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 16px;
+}
+
+.part__text {
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 25px;
+}
+
 
 .about-me {
   background-image: linear-gradient(45deg, #1da1f2, #0e71c8);
@@ -144,9 +154,10 @@ body {
 
   & h2 {
     padding: 5px 15px;
-    box-shadow: 0 0 7px 0 rgba(107, 74, 255, 0.5);
+    width: auto;
     border-radius: 16px;
     background: linear-gradient(45deg, #1da1f2, #0e71c8);
+    box-shadow: 0 4px 15px #0164e687;
   }
 }
 
@@ -164,8 +175,23 @@ body {
   position: relative;
   margin: 0 10px 10px 10px;
   border-radius: 50%;
-  background: linear-gradient(45deg, #333333, #626b73);
-  box-shadow: 0 4px 30px rgba(63, 65, 67, 0.4);
+  box-shadow: 0 4px 15px rgb(23 25 86 / 65%);
+
+  &--linkedin {
+    background: linear-gradient(45deg, #003a92, #006cbd);
+  }
+
+  &--git {
+    background: linear-gradient(45deg, #333333, #626b73);
+  }
+
+  &--instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  }
+
+  &--vk {
+    background: linear-gradient(45deg, #3b5998, #0078d7);
+  }
 }
 
 .social__link {

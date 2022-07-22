@@ -31,3 +31,11 @@ partTitles.forEach((element) => {
     };
   })
 });
+
+partTitles.forEach((element) => {
+  element.addEventListener('keydown', (evt) => {
+    if (evt.code == 'Enter') {
+      element.click()
+    };
+  });
+});
