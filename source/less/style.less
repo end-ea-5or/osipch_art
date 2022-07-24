@@ -104,28 +104,28 @@ body {
 }
 
 .part {
-  display: flex;
-  flex-direction: column;
   margin: 10px 20px 0 20px;
   padding: 10px;
   border-radius: 20px;
-  background-image: linear-gradient(45deg, #1da1f2, #0e71c8); // пока что
-  box-shadow: 0 4px 30px rgb(27 86 231 / 70%); // пока что
   overflow: hidden;
   height: 50px;
   transition: all 0.5s ease-in-out;
   color: transparent;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
 .part__title {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
-  width: 100%;
   font-size: inherit;
   font-weight: 700;
   text-align: center;
   color: #ffffff;
-  transition: all 0.5s ease-in-out;
   cursor: pointer;
   border-radius: 16px;
 }
@@ -137,27 +137,44 @@ body {
   line-height: 25px;
 }
 
-
 .about-me {
-  background-image: linear-gradient(45deg, #1da1f2, #0e71c8);
-  box-shadow: 0 4px 30px rgb(27 86 231 / 70%);
+  background-image: linear-gradient(225deg, #926fc8, #0396b2, #235761);
+  box-shadow: 0 4px 20px rgb(27 86 231 / 70%);
+}
+
+.social {
+  background-image: linear-gradient(225deg, #e176ae, #fb8310, #a45538);
+  box-shadow: 0 4px 20px rgb(227 131 81 / 70%);
 }
 
 .my-art {
-  background-image: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  background-image: linear-gradient(225deg, #5d70de, #901fa1, #381f4a);
+  box-shadow: 0 4px 20px rgb(202 62 230 / 70%);
 }
 
 .js-active {
   background: none;
-  border: 7px solid rgba(107, 74, 255, 0.5);
   color: #333333;
+  // border: 7px solid rgba(107, 74, 255, 0.5);
 
   & h2 {
     padding: 5px 15px;
-    width: auto;
     border-radius: 16px;
-    background: linear-gradient(45deg, #1da1f2, #0e71c8);
-    box-shadow: 0 4px 15px #0164e687;
+  }
+
+  & .about-me__title {
+    background-image: linear-gradient(225deg, #926fc8, #0396b2, #235761);
+    box-shadow: 0 4px 20px rgb(27 86 231 / 70%);
+  }
+
+  & .social__title {
+    background-image: linear-gradient(225deg, #e176ae, #fb8310, #a45538);
+    box-shadow: 0 4px 20px rgb(227 131 81 / 70%);
+  }
+
+  & .my-art__title {
+    background-image: linear-gradient(225deg, #5d70de, #901fa1, #381f4a);
+    box-shadow: 0 4px 20px rgb(202 62 230 / 70%);
   }
 }
 
@@ -245,5 +262,5 @@ body {
   text-align: center;
   font-size: 16px;
   border-radius: 12px;
-  background: linear-gradient(50deg,#00649ae6,#00bcffe8);
+  background: linear-gradient(50deg, #00649ae6, #00bcffe8);
 }
