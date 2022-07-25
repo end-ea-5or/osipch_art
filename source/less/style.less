@@ -10,6 +10,7 @@ img {
 }
 
 body {
+  position: relative;
   min-width: 320px;
   margin: 0;
   padding: 0;
@@ -130,8 +131,14 @@ body {
   border-radius: 16px;
 }
 
+.my-art__title {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .part__text {
-  margin: 10px 0 0 0;
+  display: inline-block;
+  margin: 10px 10px 0 10px;
   padding: 0;
   font-size: 16px;
   line-height: 25px;
@@ -148,34 +155,10 @@ body {
 }
 
 .my-art {
+  padding-left: 0;
+  padding-right: 0;
   background-image: linear-gradient(225deg, #5d70de, #901fa1, #381f4a);
   box-shadow: 0 4px 20px rgb(202 62 230 / 70%);
-}
-
-.js-active {
-  background: none;
-  color: #333333;
-  // border: 7px solid rgba(107, 74, 255, 0.5);
-
-  & h2 {
-    padding: 5px 15px;
-    border-radius: 16px;
-  }
-
-  & .about-me__title {
-    background-image: linear-gradient(225deg, #926fc8, #0396b2, #235761);
-    box-shadow: 0 4px 20px rgb(27 86 231 / 70%);
-  }
-
-  & .social__title {
-    background-image: linear-gradient(225deg, #e176ae, #fb8310, #a45538);
-    box-shadow: 0 4px 20px rgb(227 131 81 / 70%);
-  }
-
-  & .my-art__title {
-    background-image: linear-gradient(225deg, #5d70de, #901fa1, #381f4a);
-    box-shadow: 0 4px 20px rgb(202 62 230 / 70%);
-  }
 }
 
 .social__list {
@@ -231,14 +214,14 @@ body {
   justify-content: center;
   margin: 10px 0 0 0;
   padding: 0;
+  // padding: 0 10px;
   list-style: none;
 }
 
 .toggle__item {
   position: relative;
-  width: 250px;
-  height: 250px;
-  margin: 10px;
+  margin: 10px 20px;
+  padding: 0;
   background-color: #3644463d;
   border-radius: 15px;
   overflow: hidden;
@@ -247,20 +230,82 @@ body {
 
 .toggle__preview {
   display: block;
-  object-fit: cover;
-  // width: 250px;
-  // height: 250px;
+  object-fit: contain;
 }
 
-.toggle__text {
+.toggle__link {
   position: absolute;
-  top: 5px;
-  left: 5px;
-  // transform: translateX(-50%);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: fit-content;
+  max-width: 80%;
+  overflow-x: hidden;
   margin: 0;
-  padding: 5px;
+  padding: 15px;
   text-align: center;
   font-size: 16px;
-  border-radius: 12px;
-  background: linear-gradient(50deg, #00649ae6, #00bcffe8);
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 17px;
+  background: linear-gradient(45deg, #620168d9, #0085ffde);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+// .gallery__link {
+
+// }
+
+// -------------------------------- js-стили
+
+.js-active {
+  background: none;
+  color: #333333;
+  // border: 7px solid rgba(107, 74, 255, 0.5);
+
+  & h2 {
+    padding: 5px 15px;
+    border-radius: 16px;
+  }
+
+  & .about-me__title {
+    background-image: linear-gradient(225deg, #926fc8, #0396b2, #235761);
+    box-shadow: 0 4px 20px rgb(27 86 231 / 70%);
+  }
+
+  & .social__title {
+    background-image: linear-gradient(225deg, #e176ae, #fb8310, #a45538);
+    box-shadow: 0 4px 20px rgb(227 131 81 / 70%);
+  }
+
+  & .my-art__title {
+    background-image: linear-gradient(225deg, #5d70de, #901fa1, #381f4a);
+    box-shadow: 0 4px 20px rgb(202 62 230 / 70%);
+  }
+}
+
+.js-gallery {
+  display: none;
+}
+
+.js-toggle__item {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  // transition: all 0.5s ease-in-out;
+
+  & .js-gallery {
+    display: block;
+  }
+
+  & .toggle__preview {
+    display: none;
+  }
 }
