@@ -1,3 +1,7 @@
+:root {
+  --heightContainer: "250px";
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -276,11 +280,26 @@ body {
 }
 
 // -------------------------------- js-стили
+@keyframes overflowTest {
+  from {
+    overflow: hidden;
+    height: 50px;
+  }
+
+  to {
+    overflow: hidden;
+    height: calc(var(--heightContainer) * 1px);
+  }
+}
 
 .js-active {
   background: none;
   color: #333333;
-  // border: 7px solid rgba(107, 74, 255, 0.5);
+  overflow: visible;
+  height: auto;
+  animation-name: overflowTest;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
 
   & h2 {
     padding: 5px 15px;
