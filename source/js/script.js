@@ -53,6 +53,15 @@ partTitles.forEach((element) => {
   });
 });
 
+// для управления с клавиатуры, tab и enter
+galleryToggles.forEach((element) => {
+  element.addEventListener('keydown', (evt) => {
+    if (evt.code == 'Enter') {
+      element.click()
+    };
+  });
+});
+
 // галерея
 galleryToggles.forEach((element) => {
   element.addEventListener('click', () => {

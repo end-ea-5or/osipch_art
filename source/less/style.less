@@ -2,6 +2,18 @@
   --heightContainer: "250px";
 }
 
+@keyframes overflowTest {
+  from {
+    overflow: hidden;
+    height: 50px;
+  }
+
+  to {
+    overflow: hidden;
+    height: calc((var(--heightContainer) * 1px) + 10px);
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -39,6 +51,15 @@ body {
   overflow: hidden;
 }
 
+.page-main {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 660px) {
+    align-items: center;
+  }
+}
+
 .container {
   position: absolute;
   left: 50%;
@@ -47,10 +68,14 @@ body {
   transform: translateX(-50%);
   width: calc(100% - 40px);
   min-width: 240px;
-  max-width: 660px;
+  max-width: 1000px;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 8px 60px -10px rgb(95 67 164 / 74%);
+
+  @media (min-width: 1200px) {
+    margin-top: 200px;
+  }
 }
 
 .title {
@@ -114,8 +139,12 @@ body {
   border-radius: 20px;
   overflow: hidden;
   height: 50px;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   color: transparent;
+
+  @media (min-width: 660px) {
+    width: 580px;
+  }
 }
 
 .content {
@@ -266,6 +295,10 @@ body {
   gap: 10px;
   padding-left: 10px;
   padding-right: 10px;
+
+  @media (min-width: 660px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .gallery__link {
@@ -304,18 +337,6 @@ body {
 }
 
 // -------------------------------- js-стили
-@keyframes overflowTest {
-  from {
-    overflow: hidden;
-    height: 50px;
-  }
-
-  to {
-    overflow: hidden;
-    height: calc(var(--heightContainer) * 1px);
-  }
-}
-
 .js-active {
   background: none;
   color: #333333;
@@ -323,11 +344,15 @@ body {
   height: auto;
   animation-name: overflowTest;
   animation-duration: 0.3s;
-  animation-fill-mode: forwards;
 
   & h2 {
     padding: 5px 15px;
     border-radius: 16px;
+  }
+
+  & .my-art__title {
+    align-self: center;
+    width: 580px;
   }
 
   & .about-me__title {
@@ -343,6 +368,10 @@ body {
   & .my-art__title {
     background-image: linear-gradient(225deg, #5d70de, #901fa1, #381f4a);
     box-shadow: 0 4px 20px rgb(202 62 230 / 70%);
+  }
+
+  &.my-art {
+    width: 95%;
   }
 }
 
