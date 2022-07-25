@@ -10,7 +10,6 @@ let galleryContainers = document.querySelectorAll('.js-gallery');
 galleryContainers.forEach((section) => {
   lightGallery(section.querySelector('.gallery'), {
     plugins: [lgZoom],
-    cancelable: false,
   });
 });
 
