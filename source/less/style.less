@@ -121,7 +121,7 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .part__title {
@@ -241,6 +241,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 20;
   transform: translateX(-50%) translateY(-50%);
   width: fit-content;
   max-width: 80%;
@@ -269,6 +270,13 @@ body {
 
 .gallery__link {
   border-radius: 15px;
+  box-shadow: 0 7px 10px rgb(29 25 2 / 72%);
+  overflow: hidden;
+
+  &:hover .gallery__pic {
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
+  }
 }
 
 .gallery__pic {
@@ -277,6 +285,22 @@ body {
   padding: 0;
   width: 100%;
   height: auto;
+  border-radius: 15px;
+}
+
+.gallery__text {
+  margin: 20px;
+
+  & h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  & span {
+    display: inline-block;
+    margin-top: 10px;
+  }
 }
 
 // -------------------------------- js-стили
@@ -333,6 +357,8 @@ body {
   width: 100%;
   border-radius: 0;
   transition: all 0.2s ease-in-out;
+  background: radial-gradient(#f8e602c9, #b65f00b5);
+  overflow: visible;
 
   & .js-gallery {
     display: block;
@@ -344,8 +370,8 @@ body {
 }
 
 .js-toggle__link {
-  top: 10px;
-  left: 10px;
+  top: -35px;
+  left: 5px;
   transform: none;
   transition: all 0.3s ease-in-out;
 
