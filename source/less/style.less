@@ -68,7 +68,7 @@ body {
   transform: translateX(-50%);
   width: calc(100% - 40px);
   min-width: 240px;
-  max-width: 1000px;
+  max-width: 860px;
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 8px 60px -10px rgb(95 67 164 / 74%);
@@ -209,6 +209,11 @@ body {
   margin: 0 10px 10px 10px;
   border-radius: 50%;
   box-shadow: 0 4px 15px rgb(23 25 86 / 65%);
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &--linkedin {
     background: linear-gradient(45deg, #003a92, #006cbd);
@@ -263,7 +268,6 @@ body {
 
 .toggle__preview {
   display: block;
-  object-fit: contain;
 }
 
 .toggle__link {
@@ -283,6 +287,12 @@ body {
   cursor: pointer;
   border-radius: 17px;
   background: linear-gradient(45deg, #620168d9, #0085ffde);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(45deg,#620168,#0085ff);
+    box-shadow: 0px 7px 20px rgb(140 150 233 / 86%);
+  }
 }
 
 .toggle-link__hidden {
@@ -336,6 +346,27 @@ body {
   }
 }
 
+.remark {
+  position: absolute;
+  bottom: -36px;
+  left: 12px;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  line-height: 15px;
+  color: #41406e;
+
+  @media (min-width: 660px) {
+    bottom: -22px;
+  }
+}
+
+.remark__br {
+  @media (min-width: 660px) {
+    display: none;
+  }
+}
+
 // -------------------------------- js-стили
 .js-active {
   background: none;
@@ -351,10 +382,13 @@ body {
   }
 
   & .my-art__title {
-    align-self: center;
-    width: 580px;
     background-image: linear-gradient(225deg, #5d70de, #901fa1, #381f4a);
     box-shadow: 0 4px 20px rgb(202 62 230 / 70%);
+
+    @media (min-width: 660px) {
+      align-self: center;
+      width: 580px;
+    }
   }
 
   & .about-me__title {
@@ -368,7 +402,9 @@ body {
   }
 
   &.my-art {
-    width: 95%;
+    @media (min-width: 660px) {
+      width: 95%;
+    }
   }
 }
 
