@@ -133,6 +133,77 @@ body {
   }
 }
 
+.slills__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slills__item {
+  position: relative;
+  margin: 20px 0 0 0;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  // box-shadow: 0 0 0 3px rgba(117, 134, 255, 0.8);
+  background-color: rgba(100, 100, 100, 0.3);
+
+  &--less {
+    background-color: #1E416F;
+  }
+
+  &--sass {
+    background-color: #CF649A;
+  }
+
+  &--html {
+    background-color: #f04832;
+  }
+
+  &--css {
+    background-color: #009ed2;
+  }
+
+  &--js {
+    background-color: #f0db4f;
+  }
+
+  &--npm {
+    background-color: #d5343d;
+  }
+
+  &--gulp {
+    background-color: #ff4654;
+  }
+
+  &--photoshop {
+    background-color: #242238;
+  }
+
+  &--illustrator {
+    background-color: #373122;
+  }
+
+  &--figma {
+    background-color: #1e1e1e;
+  }
+}
+
+.slills__svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  margin: 0;
+  padding: 0;
+}
+
 .part {
   margin: 10px 20px 0 20px;
   padding: 10px;
