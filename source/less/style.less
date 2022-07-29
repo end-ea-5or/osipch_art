@@ -133,19 +133,44 @@ body {
   }
 }
 
+.skills-description {
+  margin: 10px 10px 0 10px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 10px 0 10px;
+  padding: 0 10px;
+  border-top: 1px solid #33333373;
+}
+
+.skills-title {
+  display: block;
+  margin: -15px auto 0 auto;
+  padding: 0 15px;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 25px;
+}
+
 .slills__list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin: 0;
+  margin: 10px 0 0 0;
   padding: 0;
   list-style: none;
 }
 
 .slills__item {
   position: relative;
-  margin: 20px 0 0 0;
+  margin: 0;
   padding: 0;
   width: 50px;
   height: 50px;
@@ -192,6 +217,10 @@ body {
 
   &--figma {
     background-color: #1e1e1e;
+  }
+
+  &--drawing {
+    background-color: #28b2b2;
   }
 }
 
