@@ -6,10 +6,10 @@ let currentItem = 0;
 let activeHeight = 0;
 let galleryToggles = mainElement.querySelectorAll('.toggle__link');
 let myArtSection = mainElement.querySelector('.my-art');
-let galleryContainers = document.querySelectorAll('.js-gallery');
+let galleryContainers = myArtSection.querySelectorAll('.gallery');
 
 galleryContainers.forEach((section) => {
-  lightGallery(section.querySelector('.gallery'), {
+  lightGallery(section, {
     plugins: [lgZoom],
   });
 });

@@ -446,6 +446,36 @@ body {
   }
 }
 
+.gallery__subtitle {
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 2;
+  font-weight: 700;
+
+  &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-right: 5px;
+    background-color: #1e1e1e;
+    flex-grow: 1;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    margin-left: 5px;
+    background-color: #1e1e1e;
+    flex-grow: 1;
+  }
+}
+
+
 .remark {
   position: absolute;
   bottom: -36px;
